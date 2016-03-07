@@ -142,6 +142,11 @@
     });
   }
 
+  // redirect to https so webcam works
+  if (window.location.protocol === "http:") {
+      window.location = window.location.toString().replace(/^http:/, "https:")
+  }
+
   if (window.location.hash === "#reset") {
     delete window.localStorage["ah-ah-ah-image"];
   }
